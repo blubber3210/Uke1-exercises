@@ -281,8 +281,99 @@ namespace ConsoleApp3
             */
 
             // oppgave: Krokodillespill
+            // CrocodileGame();
+            
+            // oppgave: TekstTukling
+            // ChangeText(); - does not work
 
         }
+
+        static void CrocodileGame()
+        {
+            /*
+             *For hver runde skal det printes ut til skjermen et random tall mellom 1-11, et mellomrom og et nytt tall mellom 1-11 med en underscore mellom slik at det ser sånn ut: 3 _ 5
+               
+               Brukeren kan skrive inn <, > eller =
+               
+               i tilfellet brukeren får 3 _ 5 vil svaret være <, altså 3 < 5
+               
+               Tallene må sjekkes om det første er større eller mindre eller lik det andre tallet,
+               Det må verifiseres om brukeren har valgt riktig alternativ.
+               Brukeren får et poeng per riktig svar, og mister et poeng per feil svar.
+               Poengsummen printes til skjermen for hvert svar brukeren har gitt.
+               Spillet avsluttes når brukeren skriver inn noe annet enn de tre alternativene
+             */
+            int points = 0;
+            string[] validInputs = { "=", "<", ">" };
+            var rand = new Random();
+
+            while (true)
+            {
+                int num1 = rand.Next(1, 12);
+                int num2 = rand.Next(1, 12);
+
+                Console.WriteLine($"{num1} _ {num2}");
+                Console.WriteLine("Type >, <, or = to continue");
+
+                string input = Console.ReadLine();
+
+                if (!validInputs.Contains(input))
+                {
+                    Console.WriteLine("Good game, good bye");
+                    break;
+                }
+
+                string correctAnswer;
+
+                if (num1 < num2) correctAnswer = "<";
+                else if (num1 > num2) correctAnswer = ">";
+                else correctAnswer = "=";
+
+                if (input == correctAnswer)
+                {
+                    points++;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"Correct! You have {points} points");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    points--;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Incorrect! You lose a point :( You have {points} points");
+                    Console.ResetColor();
+                }
+
+                Console.WriteLine();
+                Thread.Sleep(600);
+            }
+
+        }
+
+        static void ChangeText() // does not work
+        {
+            Console.WriteLine("Type 1 or 2 to pick an option:");
+            Console.WriteLine("1. RotateText");
+            Console.WriteLine("2. Change word");
+            var menuSelect = Console.ReadLine();
+            Console.WriteLine("Type a word:");
+            var input = Console.ReadLine();
+
+            if (menuSelect == "1")
+            {
+                for (int i = input.Length; i > 0; i--)
+                {
+                    Console.Write(input[i]);
+                }
+            }
+            else
+            {
+                Console.WriteLine("nope");
+            }
+
+        }
+
+        
 
     }
 }
