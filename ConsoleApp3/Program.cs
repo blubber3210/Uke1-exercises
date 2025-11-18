@@ -1,4 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Security.Cryptography.X509Certificates;
+using System.Transactions;
 
 namespace ConsoleApp3
 {
@@ -6,9 +9,11 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
+            //Samlet moodle oppgaver, kommentert ut løpende 
+            //dag en 
             /*
 
-            //dag en 
+            ------------------------------------------------------
             int num = 2;
             long longNum = 23;
             float decimalNum1 = 1.5F;
@@ -31,7 +36,8 @@ namespace ConsoleApp3
             int inputSum = input2converted + input1converted;
             Console.WriteLine("The sum of your numbers is " + inputSum); */
 
-            // if else
+
+            // if else 
             // oppgave 1 - ta inn to tall og returnere true hvis de er like 
             /*
             int num1 = 3;
@@ -67,8 +73,10 @@ namespace ConsoleApp3
                 }
             }
             */
-            /*
+
+
             // oppgave 2 - pluss hvis tall er ulike/multiply hvis tall er like
+            /*--------------------------------------------------------
 
             int sum = 0;
 
@@ -93,7 +101,10 @@ namespace ConsoleApp3
 
             Console.WriteLine($"Sum is {sum}");
             */
+
+
             //oppgave 3 - to nummer, hvis sum eller en av de er 30 returnerer den true
+            /*------------------------------------------------------------
 
             bool isThirty = false; 
             Console.WriteLine("Enter first number");
@@ -123,6 +134,96 @@ namespace ConsoleApp3
             {
                 Console.WriteLine("nothing here is thirty");
             }
+
+            */
+
+
+            //Random
+            // oppgave: random hobby generator. Forsøk 1 - uten array 
+            /*
+            var rand = new Random();
+            string name = "Noname";
+
+            Console.WriteLine("What's the name?");
+            name = Console.ReadLine();
+            var randomNum = rand.Next(0, 3);
+            if (randomNum == 0)
+            {
+                Console.WriteLine($"{name}'s new hobby is skiing");
+            } else if (randomNum == 1)
+            {
+                Console.WriteLine($"{name}'s new hobby is climbing");
+            } else 
+            {
+                Console.WriteLine($"{name}'s new hobby is dancing");
+            }
+
+            */
+
+
+            //Switch
+            //oppgave 1 - ukedager
+            /*
+
+            Console.WriteLine("enter a number between 1 and 7");
+            var input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    Console.WriteLine("mandag");
+                    break;
+
+                case "2":
+                    Console.WriteLine("tirsdag");
+                    break;
+
+                case "3":
+                    Console.WriteLine("onsdag");
+                    break;
+
+                case "4":
+                    Console.WriteLine("torsdag");
+                    break;
+
+                case "5":
+                    Console.WriteLine("fredag");
+                    break;
+
+                case "6":
+                    Console.WriteLine("lørdag");
+                    break;
+
+                case "7":
+                    Console.WriteLine("søndag");
+                    break;
+
+                default:
+                    Main(args);
+                    break;
+            }
+
+            // TestSomething();Still doesn't work 
+
+            */
+
+            //Loops
+            //For loop test 
+
+            string[] texts = new string[] { "this", "is", "fun" };
+            
+            for (int i = 0; i < texts.Length; i++)
+            {
+                Console.WriteLine(texts[i]);
+            }
+            
+
+            foreach (var text in texts)
+            {
+                Console.WriteLine(text);
+                
+            }
         }
+
     }
 }
