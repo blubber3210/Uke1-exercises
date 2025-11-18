@@ -208,21 +208,80 @@ namespace ConsoleApp3
             */
 
             //Loops
+            // For: Når vi vil gjenta noe et spesifikt antall ganger eller behøver en indeks for å prosessere dataene våre
+            // Foreach: Når vi ikke er opptatt av hvilken index eller hvor mange ganger noe skal gjøres, men heller vil gjøre noe per element 
+            // While: Brukes når man vil utføre en handling så lenge en "condition" har boolean verdien "true" 
+            
             //For loop test 
 
-            string[] texts = new string[] { "this", "is", "fun" };
+            //string[] texts = new string[] { "this", "is", "fun" };
             
+            /*
             for (int i = 0; i < texts.Length; i++)
             {
                 Console.WriteLine(texts[i]);
             }
-            
+            */
 
+            /*
             foreach (var text in texts)
             {
                 Console.WriteLine(text);
-                
             }
+            */
+
+            /*
+            bool condition = true;
+            int i = 0;
+            while (condition)
+            {
+                if (i < 10)
+                {
+                    Console.WriteLine("elida er kul");
+                    i++;
+                }
+                else
+                {
+                    condition = false;
+                }
+            }
+            */
+
+            // oppgave 1: lag en for løkke som printer ut "Terje er kul" 5 ganger
+            /*
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Terje er kul");
+            }
+            */
+            // oppgave 2: foreach løkke som printer ut hver bokstav i en string og printer i konsollen
+            /*
+            string word = "Crocodile";
+            foreach (var letter in word)
+            {
+                Console.Write(letter);
+            }
+            */
+            // oppgave 3: while løkke som printer ut "rundenummer" pluss et tall opptil ti runder
+            /*
+            bool condition = true;
+            int round = 1;
+            while (condition)
+            {
+                if (round < 10)
+                {
+                    Console.WriteLine($"Runde nummer {round}");
+                    round++;
+                }
+                else
+                {
+                    condition = false;
+                }
+            }
+            */
+
+            // oppgave: Krokodillespill
+
         }
 
     }
