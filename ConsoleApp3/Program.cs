@@ -285,6 +285,12 @@ namespace ConsoleApp3
             
             // oppgave: TekstTukling
             // ChangeText(); - does not work
+            
+            // oppgave: gjett tallet
+            GuessNumber();
+
+            
+
 
         }
 
@@ -373,7 +379,39 @@ namespace ConsoleApp3
 
         }
 
-        
+        static void GuessNumber()
+        {
+            var rand = new Random();
+            int randomNumber = rand.Next(1, 101);
+            Console.WriteLine("Guess a number!");
+
+            while (true)
+            {
+                var input = Console.ReadLine();
+
+                if (!int.TryParse(input, out int inputNum))
+                {
+                    Console.WriteLine("please enter a valid number");
+                    continue;
+                }
+
+                if (inputNum == randomNumber)
+                {
+                    Console.WriteLine("Correct! good bye");
+                    break; 
+                }
+                else if (inputNum > randomNumber)
+                {
+                    Console.WriteLine("too big");
+                    Console.WriteLine();
+                }
+                else 
+                {
+                    Console.WriteLine("too small");
+                    Console.WriteLine();
+                }
+            }
+        }
 
     }
 }
