@@ -10,6 +10,10 @@ namespace ConsoleApp3
         static void Main(string[] args)
         {
             //Samlet moodle oppgaver, kommentert ut løpende 
+
+            ////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////// Grunnleggende C# //////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////
             //dag en 
             /*
 
@@ -285,12 +289,19 @@ namespace ConsoleApp3
             
             // oppgave: TekstTukling
             // ChangeText();
-            
+
             // oppgave: gjett tallet
             // GuessNumber();
 
             // oppgave: hva gjør koden? 
             // WhatDoesThisCodeDo();
+
+            ///////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////// Intro til objektorientering //////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////////
+            ///
+            /// C-sharp har statisk typing -> Variabeltypene må deklareres ved kompileringstiden
+
 
 
 
@@ -361,10 +372,13 @@ namespace ConsoleApp3
 
         static void ChangeText()
         {
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("let's do something with some text");
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.WriteLine("what do you want to do? Type 1 or 2, then press enter");
             Console.WriteLine("1. rotate text \n 2. change text");
+            Console.ResetColor();
             var menuSelect = Console.ReadLine();
             if (menuSelect == "1")
             {
@@ -479,8 +493,10 @@ namespace ConsoleApp3
                         var character = (char)i;
                         var percentage = 100 * (double)counts[i] / totalLetters;
                         string output = character + " - " + percentage.ToString("F2") + "%";
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
                         Console.CursorLeft = Console.BufferWidth - output.Length - 1;
                         Console.WriteLine(output);
+                        Console.ResetColor();
                     }
                 }
             }
