@@ -300,7 +300,12 @@ namespace ConsoleApp3
             ///////////////////////////// Intro til objektorientering //////////////////////////////
             ///////////////////////////////////////////////////////////////////////////////////
             ///
-            /// C-sharp har statisk typing -> Variabeltypene må deklareres ved kompileringstiden
+            
+            // Oppgave: pokedex
+            // PrintPokemon();
+
+            // Objekter i liste
+            AddPeople();
 
 
 
@@ -499,6 +504,54 @@ namespace ConsoleApp3
                         Console.ResetColor();
                     }
                 }
+            }
+        }
+
+        static void PrintPokemon()
+        {
+            var pikachu = new Pokemon("Pikachu", 50, 21);
+            //myPokemon.Name = "Pikachu";
+            //myPokemon.Health = 50;
+            //myPokemon.Level = 21;
+
+            Console.WriteLine($"Name: {pikachu.Name} \nHealth: {pikachu.Health} \nLevel: {pikachu.Level}");
+
+            var bulbasaur = new Pokemon("Bulbasaur", 40, 30);
+
+            Console.WriteLine($"Name: {bulbasaur.Name} \nHealth: {bulbasaur.Health} \nLevel: {bulbasaur.Level}");
+
+            /*
+            Pokemon newPokemon = new Pokemon();
+
+            Console.Write("Name: ");
+            newPokemon.Name = Console.ReadLine();
+            Console.Write("Health: ");
+            newPokemon.Health = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Level: ");
+            newPokemon.Level = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"Name: {newPokemon.Name} \nHealth: {newPokemon.Health} \nLevel: {newPokemon.Level}");
+
+            */
+        }
+
+        static void AddPeople()
+        {
+            List<Person> people = new List<Person>();
+
+            Person person1 = new Person("Lise", 60);
+            Person person2 = new Person("Karl", 30);
+            Person person3 = new Person("Tomas", 42);
+
+            people.Add(person1);
+            people.Add(person2);
+            people.Add(person3);
+
+            Console.WriteLine("Persons in list");
+
+            foreach (Person person in people)
+            {
+                Console.WriteLine($"Navn: {person.Name}, Alder: {person.Age}");
             }
         }
     }
