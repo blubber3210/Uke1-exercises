@@ -284,7 +284,7 @@ namespace ConsoleApp3
             // CrocodileGame();
             
             // oppgave: TekstTukling
-            // ChangeText(); - does not work
+            // ChangeText();
             
             // oppgave: gjett tallet
             // GuessNumber();
@@ -359,27 +359,67 @@ namespace ConsoleApp3
 
         }
 
-        static void ChangeText() // does not work
+        static void ChangeText()
         {
-            Console.WriteLine("Type 1 or 2 to pick an option:");
-            Console.WriteLine("1. RotateText");
-            Console.WriteLine("2. Change word");
+            Console.WriteLine("let's do something with some text");
+            Console.WriteLine();
+            Console.WriteLine("what do you want to do? Type 1 or 2, then press enter");
+            Console.WriteLine("1. rotate text \n 2. change text");
             var menuSelect = Console.ReadLine();
-            Console.WriteLine("Type a word:");
-            var input = Console.ReadLine();
-
             if (menuSelect == "1")
             {
-                for (int i = input.Length; i > 0; i--)
+                RunRotateText();
+            }
+            else if (menuSelect == "2")
+            {
+                RunChangeText();
+            }
+            else
+            {
+                Console.WriteLine("oops");
+                Console.WriteLine();
+                ChangeText();
+            }
+        }
+
+        static void RunRotateText()
+        {
+            Console.WriteLine("Type a word");
+            var input = Console.ReadLine();
+            Console.WriteLine($"your word: {input}");
+
+            char[] cArray = input.ToCharArray();
+            string reverse = String.Empty;
+            for (int i = cArray.Length - 1; i > -1; i--)
+            {
+                reverse += cArray[i];
+            }
+            Console.WriteLine($"output: {reverse}");
+        }
+
+        static void RunChangeText()
+        {
+            Console.WriteLine("Type a word");
+            var input = Console.ReadLine();
+            Console.WriteLine($"Your word is {input}");
+
+            char[] cArray = input.ToCharArray();
+            char character = 'e';
+            char newCharacter = 'a';
+            string outputWord;
+
+            if (cArray.Contains(character))
+            {
+                cArray.Replace(character, newCharacter);
+                foreach (char letter in cArray)
                 {
-                    Console.Write(input[i]);
+                    Console.Write(letter);
                 }
             }
             else
             {
-                Console.WriteLine("nope");
+                RunChangeText();
             }
-
         }
 
         static void GuessNumber()
