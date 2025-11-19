@@ -287,9 +287,12 @@ namespace ConsoleApp3
             // ChangeText(); - does not work
             
             // oppgave: gjett tallet
-            GuessNumber();
+            // GuessNumber();
 
-            
+            // oppgave: hva gjør koden? 
+            // WhatDoesThisCodeDo();
+
+
 
 
         }
@@ -413,5 +416,34 @@ namespace ConsoleApp3
             }
         }
 
+        static void WhatDoesThisCodeDo()
+        {
+
+
+            var range = 250;
+            var counts = new int[range];
+            int totalLetters = 0;
+            string text = "something";
+            while (!string.IsNullOrWhiteSpace(text))
+            {
+                text = Console.ReadLine();
+                foreach (var character in (text ?? string.Empty).ToLower())
+                {
+                    counts[(int)character]++;
+                    totalLetters++;
+                }
+                for (var i = 0; i < range; i++)
+                {
+                    if (counts[i] > 0)
+                    {
+                        var character = (char)i;
+                        var percentage = 100 * (double)counts[i] / totalLetters;
+                        string output = character + " - " + percentage.ToString("F2") + "%";
+                        Console.CursorLeft = Console.BufferWidth - output.Length - 1;
+                        Console.WriteLine(output);
+                    }
+                }
+            }
+        }
     }
 }
