@@ -305,7 +305,7 @@ namespace ConsoleApp3
             // PrintPokemon();
 
             // Objekter i liste
-            AddPeople();
+            // AddPeople();
 
 
 
