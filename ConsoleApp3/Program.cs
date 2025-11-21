@@ -307,6 +307,26 @@ namespace ConsoleApp3
             // Objekter i liste
             // AddPeople();
 
+            // METHOD OVERLOADING 
+            //// **
+            //OverloadExample calculator = new OverloadExample();
+            //Console.WriteLine("Sum med to int-parametre: " + calculator.Add(1,10));
+            //Console.WriteLine("Sum med tre int-parametre: " + calculator.Add(1,10, 5));
+            //Console.WriteLine("Sum med to double-parametre: " + calculator.Add(2.5, 1.7));
+            
+            // default values 
+            // default verdi er verdien en ny variabel får hvis du ikke gir den en annen verdi.
+            // hvis man ikke sender inn noe verdi som peramater, vil metoden fremdeles lese koden med default verdien
+            // eksempel: 
+
+            //int sum = calculator.LeggSammen();
+            //Console.WriteLine("Summen er: " + sum);
+            //int sum2 = calculator.LeggSammen(5, 5);
+            //Console.WriteLine("Summen er: " + sum2);
+
+
+
+
 
 
 
