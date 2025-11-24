@@ -331,6 +331,12 @@ namespace ConsoleApp3
             welcomeMessage.PrintWelcomeMessage();
             */
 
+            // Static og ikke static - "static methods" vs "instance methods"
+            // Static: knyttet til klassen, ikke til en spesifikk instans av klassen.
+            //   - kan kalles direkte på klassen uten å opprette en instans av klassen
+            //   - har bare tilgang til andre statiske "medlemmer" av klassen (statiske variabler, statiske metoder)
+            //   - mao: når du merker en metode som static, det er felles for alle instanser av den klassen, i stedet for å være unikt for hver instans
+            
 
 
 
