@@ -336,11 +336,19 @@ namespace ConsoleApp3
             //   - kan kalles direkte på klassen uten å opprette en instans av klassen
             //   - har bare tilgang til andre statiske "medlemmer" av klassen (statiske variabler, statiske metoder)
             //   - mao: når du merker en metode som static, det er felles for alle instanser av den klassen, i stedet for å være unikt for hver instans
-            
+            // ^det her skjønner jeg lite av 
+            // PrintSeparator();
+
+            // Innkapsling - en av de fire hovedprinsippene sammen med arv, polymorfisme, abstraksjon
+            // 
 
 
 
+        }
 
+        private static void PrintSeparator()
+        {
+            Console.WriteLine("********************");
         }
 
         static void CrocodileGame()
