@@ -324,8 +324,12 @@ namespace ConsoleApp3
             //int sum2 = calculator.LeggSammen(5, 5);
             //Console.WriteLine("Summen er: " + sum2);
 
-
-
+            // Minioppgave - velkomstmelding 
+            /*
+            var welcomeMessage = new WelcomeMessage();
+            welcomeMessage.PrintWelcomeMessage("Du er kul");
+            welcomeMessage.PrintWelcomeMessage();
+            */
 
 
 
@@ -574,5 +578,6 @@ namespace ConsoleApp3
                 Console.WriteLine($"Navn: {person.Name}, Alder: {person.Age}");
             }
         }
+
     }
 }
